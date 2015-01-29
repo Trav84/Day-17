@@ -11,8 +11,12 @@
 		<!-- bower:css -->
 		<!-- endbower -->
 		<!-- endbuild -->
-
-
+		<script language="javascript" type="text/javascript">
+			function playSound(soundfile) {
+			document.getElementById("dummy").innerHTML=
+			"<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+			}
+		</script>
 
 		<!-- build:css styles/main.css -->
 		<link href='http://fonts.googleapis.com/css?family=Monoton|Bangers|Press+Start+2P' rel='stylesheet' type='text/css'>
@@ -27,6 +31,8 @@
 		<!--[if lt IE 10]>
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
+		<span id="dummy" onclick="playSound('horse.wav');"></a></span>
+
 
 	
 		<div id="message-board">

@@ -28,6 +28,7 @@ $(document).ready(function(){
 			{	chat: {
 					username: userName,
 					message: $('#message-box').val(),
+					roomname: 'one'
 				}
 			},
 			'json'
@@ -35,7 +36,7 @@ $(document).ready(function(){
 	}
 
 	var render = function(chat) {
-		var messageRow = _.template('<div class="row"><span>@<%= username %>:  </span><span><%= message %></span></span>');
+		var messageRow = _.template('<div class="row"><span>@<%= username %>:  </span> <span><%= message %></span> <span class="tStamp"> <%= time_stamp%> </span> </div>');
 		for(var i=0; i<chat.length; i++) {
 			$('#message-board').append(messageRow(chat[i]));
 		}
