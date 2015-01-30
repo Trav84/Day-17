@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 	var lastId = 0;
 
-	getMessages();
+	//getMessages();
 
 	setInterval(getMessages, 1000);
 
@@ -20,6 +20,8 @@ $(document).ready(function(){
 			'https://stark-hamlet-3153.herokuapp.com/chats.json',
 			function(chat) {
 				render(chat);
+				var elem = document.getElementById('message-board');
+ 				 elem.scrollTop = elem.scrollHeight;
 			},
 			'json'
 			);
@@ -39,7 +41,7 @@ $(document).ready(function(){
 	}
 
 	var render = function(chat) {
-		var messageRow = _.template('<div class="row"><span>@<%= username %>:  </span> <span><%= message %></span> <span class="tStamp"> <%= created_at %> </span> </div>');
+		var messageRow = _.template('<div class="row"><span class="nameDisplay">@<%= username %>: &nbsp </span> <span><%= message %></span> &nbsp <span id="tStamp"> <%= time_stamp %> </span> </div>');
 		
 		for(var i=0; i<chat.length; i++) {
 			if(chat[i].id > lastId) {

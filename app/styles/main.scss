@@ -5,7 +5,7 @@ html {
 
 #message-board {
 	width: 100%;
-	height:500px;
+	height:400px;
 	background-color: rgb(14,115,182);
 	overflow-y: hidden;
 	border: 5px solid black;
@@ -13,6 +13,8 @@ html {
 	display: inline-block;
 	box-sizing:border-box;
 	overflow-y:scroll;
+	font-family:Bangers;
+	font-size:2em;
 }
 
 #header {
@@ -48,8 +50,17 @@ html {
 	box-sizing:border-box;
 }
 
-.tStamp {
-	text-align: left;
+#tStamp {
+	position:relative;
+	right:0;
+}
+
+.row {
+	position: relative;
+}
+
+.nameDisplay {
+	color:#33CC33;
 }
 
 #userName {
