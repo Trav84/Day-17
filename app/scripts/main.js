@@ -1,10 +1,13 @@
 /* jshint devel:true */
 $(document).ready(function(){
+
+	var lastId = 0;
+
 	getMessages();
 
-	//setInterval(getMessages, 1000);
+	setInterval(getMessages, 1000);
 
-	var userName = prompt('Please enter your name.');
+	var userName = prompt('Please enter your username.');
 
 	setUserName(userName);
 
@@ -36,9 +39,14 @@ $(document).ready(function(){
 	}
 
 	var render = function(chat) {
-		var messageRow = _.template('<div class="row"><span>@<%= username %>:  </span> <span><%= message %></span> <span class="tStamp"> <%= time_stamp%> </span> </div>');
+		var messageRow = _.template('<div class="row"><span>@<%= username %>:  </span> <span><%= message %></span> <span class="tStamp"> <%= created_at %> </span> </div>');
+		
 		for(var i=0; i<chat.length; i++) {
-			$('#message-board').append(messageRow(chat[i]));
+			if(chat[i].id > lastId) {
+				$('#message-board').append(messageRow(chat[i]));
+				$('#message-board').emoticonize();
+				lastId = chat[i].id;
+			}
 		}
 	};
 
@@ -55,8 +63,13 @@ $(document).ready(function(){
 	// });
 
 	$('#userName').click(function() {
-		userName = prompt('Please enter your name.');
+		userName = prompt('Please enter your username.');
 		setUserName(userName);
 	});
+
+	function playSound(soundfile) {
+		document.getElementById("dummy").innerHTML=
+		"<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+	}
 	
 });
