@@ -1,6 +1,20 @@
 /* jshint devel:true */
 $(document).ready(function(){
 
+	ion.sound({
+	    sounds: [
+	        {
+	            name: "Bloop",
+	        },
+	        {
+	            name: "magic",
+	        },
+	    ],
+	    volume: 0.5,
+	    path: "images/",
+	    preload: true
+	});
+
 	var lastId = 0;
 	var nameIcons = ['url(../images/icon1.png)', 'url(../images/icon2.png)', 'url(../images/icon3.png)', 'url(../images/icon4.png)', 'url(../images/icon5.png)', 'url(../images/icon6.jpeg)', 'url(../images/icon7.png)'];
 	var unicornFacts = [
@@ -69,21 +83,10 @@ $(document).ready(function(){
 				$('#message-board').append(messageRow(chat[i]));
 				$('#message-board').emoticonize();
 				lastId = chat[i].id;
-				play('images/Bloop.wav');
+				ion.sound.play("Bloop");
 			}
 		}
 	};
-
-	function play(file) {
-	    var embed = document.createElement("embed");
-	 
-	    embed.setAttribute('src', file);
-	    embed.setAttribute('hidden', true);
-	    embed.setAttribute('autostart', true);
-	 
-	    document.body.appendChild(embed);
-	}	
-
 
 	$('#send-button').click(function() {
 		if($('#message-box').val() === 'help' || $('#message-box').val() === 'Help') {
@@ -96,7 +99,7 @@ $(document).ready(function(){
 			$('#message-box').val('');
 		} else if($('#message-box').val() === '!Unifacts' || $('#message-box').val() === '!unifacts') {
 			$('#message-board').append('<div class="row"> <span class="botName"> @UnicornBot </span> <span class="botMessage">'+generateFacts()+' </span> </div>');
-			play('images/magic.wav')
+			ion.sound.play("magic");
 			$('#message-box').val('');
 		} else {
 			postMessages();
@@ -117,7 +120,7 @@ $(document).ready(function(){
 			$('#message-box').val('');
 		} else if($('#message-box').val() === '!Unifacts' || $('#message-box').val() === '!unifacts') {
 			$('#message-board').append('<div class="row"> <span class="botName"> @UnicornBot </span> <span class="botMessage">'+generateFacts()+' </span> </div>');
-			play('images/magic.wav')
+			ion.sound.play("magic");
 			$('#message-box').val('');
 		} else {
 			postMessages();
