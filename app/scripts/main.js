@@ -69,7 +69,7 @@ $(document).ready(function(){
 				$('#message-board').append(messageRow(chat[i]));
 				$('#message-board').emoticonize();
 				lastId = chat[i].id;
-				play('../images/Bloop.wav');
+				play('images/Bloop.wav');
 			}
 		}
 	};
@@ -96,7 +96,7 @@ $(document).ready(function(){
 			$('#message-box').val('');
 		} else if($('#message-box').val() === '!Unifacts' || $('#message-box').val() === '!unifacts') {
 			$('#message-board').append('<div class="row"> <span class="botName"> @UnicornBot </span> <span class="botMessage">'+generateFacts()+' </span> </div>');
-			play('../images/magic.wav')
+			play('images/magic.wav')
 			$('#message-box').val('');
 		} else {
 			postMessages();
@@ -117,7 +117,7 @@ $(document).ready(function(){
 			$('#message-box').val('');
 		} else if($('#message-box').val() === '!Unifacts' || $('#message-box').val() === '!unifacts') {
 			$('#message-board').append('<div class="row"> <span class="botName"> @UnicornBot </span> <span class="botMessage">'+generateFacts()+' </span> </div>');
-			play('../images/magic.wav')
+			play('images/magic.wav')
 			$('#message-box').val('');
 		} else {
 			postMessages();
