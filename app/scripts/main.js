@@ -16,7 +16,7 @@ $(document).ready(function(){
 	});
 
 	var lastId = 0;
-	var nameIcons = ['url(../images/icon1.png)', 'url(../images/icon2.png)', 'url(../images/icon3.png)', 'url(../images/icon4.png)', 'url(../images/icon5.png)', 'url(../images/icon6.jpeg)', 'url(../images/icon7.png)'];
+	var nameIcons = ['url(images/icon1.png)', 'url(images/icon2.png)', 'url(images/icon3.png)', 'url(images/icon4.png)', 'url(images/icon5.png)', 'url(images/icon6.jpeg)', 'url(images/icon7.png)'];
 	var unicornFacts = [
 		"Genghis Khan reportedly decided not to conquer India after meeting a unicorn, which bowed down to him; he viewed it as a sign from his dead father and turned his army back.",
 		"Unicorns cannot grow wings",
